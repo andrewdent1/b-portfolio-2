@@ -76,7 +76,7 @@
             width: 30vw; /* Responsive width */
             height: auto; /* Maintain aspect ratio */
             margin: 25px 0px;
-            border: 1px solid black;
+            border-radius: 5%;
         }
 
         #about {
@@ -93,6 +93,7 @@
             padding-top: 20px;
             padding-bottom: 30px;
             font-size: 1.75rem; /* Responsive font size */
+            font-weight: 300;
         }
 
         #about p {
@@ -100,16 +101,98 @@
             font-size: 1.2rem; /* Responsive font size */
         }
 
-        #portfolio h2 {
+        #whatido {
+            padding: 50px 100px;
+            background-color: #e1e1e1;
+        }
+
+        #whatido h2 {
             display: flex;
             justify-content: center;
             font-size: 1.75rem;
+            padding-bottom: 25px;
+            font-weight: 300;
+        }
+
+        #whatido-details {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 10%
+        }
+
+        #whatido-details h3 {
+            display: flex;
+            justify-content: center;
+        }
+
+        #whatido-details p {
+            text-align: center;
+            padding: 10px 30px;
+        }
+
+        .table {
+            display: grid; /* Use grid layout for the table */
+            grid-template-columns: 1fr 1fr; /* Create two equal columns */
+            width: 100%; /* Set the table to occupy the full width */
+        }
+
+        .row {
+            display: contents; /* Use contents to not create additional box */
+        }
+
+        .cell {
+            border: 1px solid black; /* Add border to cells */
+            padding: 10px; /* Add padding inside cells */
+            margin: 5px
+        }
+
+        #portfolio {
+            padding: 50px 50px;
+        }
+
+        #portfolio h2 {
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            font-size: 1.75rem;
+            padding-bottom: 25px;
+        }
+
+        .portfolio-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 50px;
+        }
+
+        .portfolio-item-content {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
         }
 
         .portfolio-item img {
             border-radius: 50%;
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .portfolio-item button {
+            display: flex;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 15px;
+            height: 25px;
+            font-weight: 500;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5%;
+        }
+
+        .portfolio-item button:hover {
+            background-color: #888;
         }
 
         .popup {
@@ -208,7 +291,7 @@
             <img src="b-self-3.JPG" alt="" class="pic-self">
         </div>
         <div id="about">
-            <h2>About Me</h2>
+            <h2>ABOUT ME</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
@@ -222,127 +305,152 @@
         </div>
     </section>
 
+    <section id="whatido">
+        <h2>WHAT I DO</h2>
+        <div id="whatido-details">
+            <div>
+                <img src="" alt="">
+                <h3>Digital Marketing</h3>
+                <p>Digital marketing is about connecting brands with audiences online through strategies like social media, SEO, content creation, and email campaigns. It’s essential for brand awareness because it allows businesses to reach targeted audiences, track engagement, and adapt campaigns in real time, ensuring stronger connections and more effective communication with potential customers.</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h3>Social Media Management</h3>
+                <p>Social media management involves creating, scheduling, and monitoring content across platforms to engage audiences and build brand presence. It’s crucial for brand awareness, as it allows businesses to connect directly with their target audience, respond to feedback, and stay relevant, ultimately fostering a loyal community and increasing visibility through strategic content and engagement.</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h3>Content Creation</h3>
+                <p>Content creation involves crafting engaging and relevant materials that captivate target audiences across various platforms. From writing articles to producing videos and graphics, it's about delivering consistent, high-quality content that aligns with a brand’s voice. Effective content creation can boost brand credibility, enhance customer engagement, and drive organic growth across digital channels.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="portfolio">
-        <h2>Social Media Management</h2>
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Pet Paradise</h2>
-                <p>March 2019-February 2021</p>
-                <p>Part-time | In-person</p>
+        <h2>EXPERIENCE</h2>
+        <div class="table">
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Pet Paradise</h2>
+                        <p>March 2019-February 2021</p>
+                        <p>Part-time | In-person</p>
+                    </div>
+                    <img src="pet_logo.png" class="circle" alt="Pet Paradise Logo">
+                    <button onclick="openPopup('popup1')" class="popup_button">Learn More</button>
+                </section>            
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Barstool Sports</h2>
+                        <p>January 2020-January 2021</p>
+                        <p>Internship | Remote</p>
+                    </div>
+                    <img src="barstool_logo.png" alt="Barstool Sports Logo">
+                    <button onclick="openPopup('popup2')" class="popup_button">Learn More</button>
+                </section>
             </div>
-            <img src="pet_logo.png" class="circle" alt="Pet Paradise Logo">
-            <button onclick="openPopup('popup1')" class="popup_button">Learn More</button>
-        </section>
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Crystal Portal</h2>
+                        <p>May 2021-September 2021</p>
+                        <p>Part-time | In-person</p>
+                    </div>
+                    <img src="crystal_logo.png" class="circle" alt="Crystal Portal Logo">
+                    <button onclick="openPopup('popup3')" class="popup_button">Learn More</button>
+                </section>
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>TLH Downtown</h2>
+                        <p>May 2022-Current</p>
+                        <p>Contract | In-person</p>
+                    </div>
+                    <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo">
+                    <button onclick="openPopup('popup4')" class="popup_button">Learn More</button>
+                </section>
+            </div>
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Olde Fields Clothing</h2>
+                        <p>February 2023-August 2023</p>
+                        <p>Part-time | In-person</p>
+                    </div>
+                    <img src="olde_logo.png" alt="Olde Fields Clothing Logo">
+                    <button onclick="openPopup('popup5')" class="popup_button">Learn More</button>
+                </section>
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>SkillStorm</h2>
+                        <p>January 2023-February 2024</p>
+                        <p>Part-time | Remote</p>
+                    </div>
+                    <img src="skillstorm_logo.png" alt="SkillStorm Logo">
+                    <button onclick="openPopup('popup6')" class="popup_button">Learn More</button>
+                </section>
+            </div>
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>RoadTrek</h2>
+                        <p>August 2023-February 2024</p>
+                        <p>Part-time | Remote</p>
+                    </div>
+                    <img src="roadtrek_logo.png" class="circle" alt="RoadTrek Logo">
+                    <button onclick="openPopup('popup7')" class="popup_button">Learn More</button>
+                </section>
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>EKS Events</h2>
+                        <p>February 2024-August 2024</p>
+                        <p>Full-time | Remote</p>
+                    </div>
+                    <img src="eks_logo.png" class="circle" alt="EKS Events Logo">
+                    <button onclick="openPopup('popup8')" class="popup_button">Learn More</button>
+                </section>
+            </div>
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Joe Mineo Creative</h2>
+                        <p>February 2024-August 2024</p>
+                        <p>Full-time | Remote</p>
+                    </div>
+                    <img src="joe_logo.png" class="circle" alt="Joe Mineo Creative Logo">
+                    <button onclick="openPopup('popup9')" class="popup_button">Learn More</button>
+                </section>
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Fox Events</h2>
+                        <p>February 2024-August 2024</p>
+                        <p>Full-time | Remote</p>
+                    </div>
+                    <img src="afox_logo.png" class="circle" alt="Fox Events Logo">
+                    <button onclick="openPopup('popup10')" class="popup_button">Learn More</button>
+                </section>
+            </div>
+            <div class="row">
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Soiree Telluride</h2>
+                        <p>February 2024-August 2024</p>
+                        <p>Full-time | Remote</p>
+                    </div>
+                    <img src="soiree_logo.png" class="circle" alt="Soiree Telluride Logo">
+                    <button onclick="openPopup('popup11')" class="popup_button">Learn More</button>
+                </section>
+                <section class="portfolio-item">
+                    <div class="portfolio-item-content">
+                        <h3>Collins Korman Events</h2>
+                        <p>February 2024-August 2024</p>
+                        <p>Full-time | Remote</p>
+                    </div>
+                    <img src="collins_logo.png" class="circle" alt="Collins Korman Events Logo">
+                    <button onclick="openPopup('popup12')" class="popup_button">Learn More</button>
+                </section>
+            </div>
+        </div>
 
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Barstool Sports</h2>
-                <p>January 2020-January 2021</p>
-                <p>Internship | Remote</p>
-            </div>
-            <img src="barstool_logo.png" alt="Barstool Sports Logo">
-            <button onclick="openPopup('popup2')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Crystal Portal</h2>
-                <p>May 2021-September 2021</p>
-                <p>Part-time | In-person</p>
-            </div>
-            <img src="crystal_logo.png" class="circle" alt="Crystal Portal Logo">
-            <button onclick="openPopup('popup3')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>TLH Downtown</h2>
-                <p>May 2022-Current</p>
-                <p>Contract | In-person</p>
-            </div>
-            <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo">
-            <button onclick="openPopup('popup4')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Olde Fields Clothing</h2>
-                <p>February 2023-August 2023</p>
-                <p>Part-time | In-person</p>
-            </div>
-            <img src="olde_logo.png" alt="Olde Fields Clothing Logo">
-            <button onclick="openPopup('popup5')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>SkillStorm</h2>
-                <p>January 2023-February 2024</p>
-                <p>Part-time | Remote</p>
-            </div>
-            <img src="skillstorm_logo.png" alt="SkillStorm Logo">
-            <button onclick="openPopup('popup6')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>RoadTrek</h2>
-                <p>August 2023-February 2024</p>
-                <p>Part-time | Remote</p>
-            </div>
-            <img src="roadtrek_logo.png" class="circle" alt="RoadTrek Logo">
-            <button onclick="openPopup('popup7')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>EKS Events</h2>
-                <p>February 2024-August 2024</p>
-                <p>Full-time | Remote</p>
-            </div>
-            <img src="eks_logo.png" class="circle" alt="EKS Events Logo">
-            <button onclick="openPopup('popup8')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Joe Mineo Creative</h2>
-                <p>February 2024-August 2024</p>
-                <p>Full-time | Remote</p>
-            </div>
-            <img src="joe_logo.png" class="circle" alt="Joe Mineo Creative Logo">
-            <button onclick="openPopup('popup9')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Fox Events</h2>
-                <p>February 2024-August 2024</p>
-                <p>Full-time | Remote</p>
-            </div>
-            <img src="afox_logo.png" class="circle" alt="Fox Events Logo">
-            <button onclick="openPopup('popup10')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Soiree Telluride</h2>
-                <p>February 2024-August 2024</p>
-                <p>Full-time | Remote</p>
-            </div>
-            <img src="soiree_logo.png" class="circle" alt="Soiree Telluride Logo">
-            <button onclick="openPopup('popup11')" class="popup_button">Learn More</button>
-        </section>
-
-        <section class="portfolio-item">
-            <div class="portfolio-item-content">
-                <h3>Collins Korman Events</h2>
-                <p>February 2024-August 2024</p>
-                <p>Full-time | Remote</p>
-            </div>
-            <img src="collins_logo.png" class="circle" alt="Collins Korman Events Logo">
-            <button onclick="openPopup('popup12')" class="popup_button">Learn More</button>
-        </section>
         <div id="popup1" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup1')">&times;</span>
