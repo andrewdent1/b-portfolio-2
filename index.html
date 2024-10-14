@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Ensure padding and borders are included in the total width and height */
+        }
+
+        body {
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            font-family: 'Spectral', serif; /* Add font family for body */
+        }
+
+        .hero {
+            position: relative; /* Set positioning to allow absolute positioning of the video */
+            height: 100vh; /* Full viewport height */
+            width: 100%; /* Full width */
+            color: white;
+            font-weight: 900;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1; /* Ensure hero content is above the video */
+            padding: 20px; /* Add padding for smaller screens */
+        }
+
+        .hero img {
+            border-radius: 50%;
+            border: 1px solid black;
+            width: 25vw; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 250px; /* Max width */
+            object-fit: cover; /* Cover the img */
+            margin-bottom: 1.1rem;
+            margin-top: 50px;
+        }
+
+        .hero h1 {
+            padding-bottom: 25px;
+            font-size: 2rem; /* Responsive font size */
+        }
+
+        .hero p {
+            font-size: 1.5rem; /* Responsive font size */
+            font-weight: 500;
+        }
+
+        .background-clip {
+            position: absolute; /* Position the video absolutely to cover the hero section */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Ensure it covers the entire hero section */
+            object-fit: cover; /* Make the video cover the whole area */
+            z-index: -1; /* Send the video behind the hero content */
+        }
+
+        .summary {
+            display: flex;
+            align-items: flex-start;
+            margin: 50px;
+            gap: 2rem;
+        }
+
+        .pic-self {
+            display: block;
+            max-width: 300px; /* Responsive width */
+            width: 30vw; /* Responsive width */
+            height: auto; /* Maintain aspect ratio */
+            margin: 25px 0px;
+            border: 1px solid black;
+        }
+
+        #about {
+            width: 100%;
+            text-align: left;
+            margin-left: 20px; /* Add left margin for spacing */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+        }
+
+        #about h2 {
+            padding-top: 20px;
+            padding-bottom: 30px;
+            font-size: 1.75rem; /* Responsive font size */
+        }
+
+        #about p {
+            padding-bottom: 30px;
+            font-size: 1.2rem; /* Responsive font size */
+        }
+
+        .portfolio-item img {
+            border-radius: 50%;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 2%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Media Queries for additional responsiveness */
+        @media (max-width: 768px) {
+            .summary {
+                margin: 20px; /* Less margin for smaller screens */
+            }
+
+            .hero h1 {
+                font-size: 1rem; /* Adjust font size */
+            }
+
+            .hero p {
+                font-size: 1rem; /* Adjust font size */
+            }
+
+            #about h2 {
+                font-size: 1rem; /* Adjust font size */
+            }
+
+            #about p {
+                font-size: 1rem; /* Adjust font size */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero img {
+                width: 70vw; /* Adjust for very small screens */
+            }
+
+            .pic-self {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+
+    <section class="hero">
+        <video autoplay loop muted playsinline class="background-clip">
+            <source src="waves1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <img src="b-selfie.JPG" alt="Profile Photo">
+            <h1 class="name">Brenna Coheley</h1>
+            <p class="title">Digital Marketing Professional</p>
+        </div>
+    </section>
+
+    <section class="summary">
+        <div>
+            <img src="b-self-1.JPG" alt="" class="pic-self">
+            <img src="b-self-2.JPG" alt="" class="pic-self">
+            <img src="b-self-3.JPG" alt="" class="pic-self">
+        </div>
+        <div id="about">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra,
+                est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
+                gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut
+                ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.
+                Maecenas fermentum consequat mi. Donec fermentum.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Social Media Management</h2>
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Pet Paradise</h2>
+                <p>March 2019-February 2021</p>
+                <p>Part-time | In-person</p>
+            </div>
+            <img src="pet_logo.png" class="circle" alt="Pet Paradise Logo">
+            <button onclick="openPopup('popup1')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Barstool Sports</h2>
+                <p>January 2020-January 2021</p>
+                <p>Internship | Remote</p>
+            </div>
+            <img src="barstool_logo.png" alt="Barstool Sports Logo">
+            <button onclick="openPopup('popup2')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Crystal Portal</h2>
+                <p>May 2021-September 2021</p>
+                <p>Part-time | In-person</p>
+            </div>
+            <img src="crystal_logo.png" class="circle" alt="Crystal Portal Logo">
+            <button onclick="openPopup('popup3')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>TLH Downtown</h2>
+                <p>May 2022-Current</p>
+                <p>Contract | In-person</p>
+            </div>
+            <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo">
+            <button onclick="openPopup('popup4')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Olde Fields Clothing</h2>
+                <p>February 2023-August 2023</p>
+                <p>Part-time | In-person</p>
+            </div>
+            <img src="olde_logo.png" alt="Olde Fields Clothing Logo">
+            <button onclick="openPopup('popup5')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>SkillStorm</h2>
+                <p>January 2023-February 2024</p>
+                <p>Part-time | Remote</p>
+            </div>
+            <img src="skillstorm_logo.png" alt="SkillStorm Logo">
+            <button onclick="openPopup('popup6')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>RoadTrek</h2>
+                <p>August 2023-February 2024</p>
+                <p>Part-time | Remote</p>
+            </div>
+            <img src="roadtrek_logo.png" class="circle" alt="RoadTrek Logo">
+            <button onclick="openPopup('popup7')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>EKS Events</h2>
+                <p>February 2024-August 2024</p>
+                <p>Full-time | Remote</p>
+            </div>
+            <img src="eks_logo.png" class="circle" alt="EKS Events Logo">
+            <button onclick="openPopup('popup8')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Joe Mineo Creative</h2>
+                <p>February 2024-August 2024</p>
+                <p>Full-time | Remote</p>
+            </div>
+            <img src="joe_logo.png" class="circle" alt="Joe Mineo Creative Logo">
+            <button onclick="openPopup('popup9')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Fox Events</h2>
+                <p>February 2024-August 2024</p>
+                <p>Full-time | Remote</p>
+            </div>
+            <img src="afox_logo.png" class="circle" alt="Fox Events Logo">
+            <button onclick="openPopup('popup10')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Soiree Telluride</h2>
+                <p>February 2024-August 2024</p>
+                <p>Full-time | Remote</p>
+            </div>
+            <img src="soiree_logo.png" class="circle" alt="Soiree Telluride Logo">
+            <button onclick="openPopup('popup11')" class="popup_button">Learn More</button>
+        </section>
+
+        <section class="portfolio-item">
+            <div class="portfolio-item-content">
+                <h2>Collins Korman Events</h2>
+                <p>February 2024-August 2024</p>
+                <p>Full-time | Remote</p>
+            </div>
+            <img src="collins_logo.png" class="circle" alt="Collins Korman Events Logo">
+            <button onclick="openPopup('popup12')" class="popup_button">Learn More</button>
+        </section>
+        <div id="popup1" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup1')">&times;</span>
+                <h2>Pet Paradise</h2>
+                <p>When joining Pet Paradise, I was brought on the team as an Animal Care Specialist. After six months
+                    with the company, our in-house Social Media Manager resigned. I was encouraged to apply, and this is
+                    where my journey with social media marketing began. Through the company's Instagram and Facebook, I
+                    began promoting our brand and highlighting the benefits of boarding your pet with Pet Paradise.</p>
+            </div>
+        </div>
+        <div id="popup2" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup2')">&times;</span>
+                <h2>Barstool Sports</h2>
+                <p>Working with Barstool gave me the confidence to scale social media accounts at a rapid rate. After
+                    creating my university's Barstool account on Instagram, I was able to grow the account from zero
+                    followers to over 30k in the first year of management.</p>
+            </div>
+        </div>
+        <div id="popup3" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup3')">&times;</span>
+                <h2>Crystal Portal</h2>
+                <p>Crystal Portal was my first internship position as a Social Media Manager. As this local business had
+                    recently opened, I joined the team to increase our digital presence. This opportunity allowed me
+                    expand my skills primarily through product highlights and e-commerce outreach.</p>
+            </div>
+        </div>
+        <div id="popup4" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup4')">&times;</span>
+                <h2>TLH Downtown</h2>
+                <p>Upon joining TLH Downtown, I embarked on my first full-time in-house social media management role. I took charge of various responsibilities, including gathering and editing content, scheduling and posting on social media platforms, and executing marketing campaigns. My role extended to fostering collaborations, managing interns, and ensuring consistent and engaging content that promoted the vibrant essence of TLH Downtown. This experience allowed me to refine my skills and make a significant impact on our online presence.</p>
+            </div>
+        </div>
+        <div id="popup5" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup5')">&times;</span>
+                <h2>Olde Fields Clothing</h2>
+                <p>At Olde Fields Clothing, I was part of the social media marketing team, where I expanded my experience in product marketing on a retail level. I contributed to creating and implementing marketing strategies that showcased our products effectively. My responsibilities included content creation, editing, scheduling, and posting, as well as engaging with our online community. This role allowed me to deepen my understanding of retail marketing on a local level.</p>
+            </div>
+        </div>
+        <div id="popup6" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup6')">&times;</span>
+                <h2>SkillStorm</h2>
+                <p>During my time at Skillstorm, I worked directly with the CMO to enhance our online presence, diving into web design and broader digital marketing beyond social media.  I played a key role in executing large marketing campaigns, enhancing our website, and developing comprehensive digital strategies.</p>
+            </div>
+        </div>
+        <div id="popup7" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup7')">&times;</span>
+                <h2>Roadtrek</h2>
+                <p>Roadtrek allowed me to on creating travel content that showcased their campervans. I provided content for a marketing campaign, producing content for their social media and marketing platforms. This opportunity allowed me to combine my passion for marketing with my love for travel.</p>
+            </div>
+        </div>
+        <div id="popup8" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup8')">&times;</span>
+                <h2>EKS Events</h2>
+                <p>With EKS Events, I collaborated with my team at an outside marketing firm to develop and execute a comprehensive social media strategy. We focused on highlighting the elegance and sophistication of their wedding and event planning services. My role involved producing and posting visually stunning content that captured the essence of their high-end events.</p>
+            </div>
+        </div>
+        <div id="popup9" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup9')">&times;</span>
+                <h2>Joe Mineo Creative</h2>
+                <p>While managing the social media for Joe Mineo Creative, I worked closely with my firm's team to create and share captivating content that showcased event planning services. We emphasized Joe's unique and creative approach, producing posts that resonated with their audience and highlighted the extraordinary events designed by Joe and his team.</p>
+            </div>
+        </div>
+        <div id="popup10" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup10')">&times;</span>
+                <h2>Fox Events</h2>
+                <p>For Fox Events, I led the social media efforts with my team, focusing on curating and posting content that reflected their dynamic and personalized event planning services. We aimed to engage our audience with behind-the-scenes glimpses and highlights of exceptional events, boosting their brand visibility and appeal across various social media platforms.</p>
+            </div>
+        </div>
+        <div id="popup11" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup11')">&times;</span>
+                <h2>Soiree Telluride</h2>
+                <p>At Soiree Telluride, I managed the social media content creation and posting, working alongside my team to present their luxurious and destination-focused event planning services. Our strategy involved showcasing breathtaking event locations and meticulous planning details, captivating their audience with the beauty and uniqueness of their Telluride events.</p>
+            </div>
+        </div>
+        <div id="popup12" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('popup12')">&times;</span>
+                <h2>Collins Korman Events</h2>
+                <p>Managing social media for Collins Korman Events, I was brought on as a contractor to develop content that highlighted the expertise of the Collins Korman team in crafting memorable weddings and events. We focused on producing and posting engaging visuals that emphasized an attention to detail and personalized experience.</p>
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
