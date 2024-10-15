@@ -27,3 +27,8 @@ function hideSidebar() {
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none'
 }
+
+document.querySelector('.close-btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default action
+    // Code to close the sidebar
+});

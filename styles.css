@@ -196,14 +196,12 @@ nav a:hover {
     font-size: 2rem;
     /* Responsive font size */
     font-weight: 300;
-    margin-left: -250px;
 }
 
 #about p {
     padding-bottom: 30px;
     font-size: 1.2rem;
     line-height: 50px;
-    margin-left: -250px;
     /* Responsive font size */
 }
 
@@ -295,6 +293,12 @@ nav a:hover {
     padding: 25px 50px;
 }
 
+.portfolio-item-content-img {
+    display: flex;
+    gap: 5vw;
+    margin-right: 100px;
+}
+
 .portfolio-item-content {
     display: flex;
     flex-direction: column;
@@ -307,10 +311,6 @@ nav a:hover {
     height: auto;
     display: flex;
     justify-content: center;
-}
-
-#tlh {
-    margin-left: 50px;
 }
 
 .portfolio-item button {
@@ -522,6 +522,7 @@ footer .social-icons img {
     #whatido-details {
         display: flex;
         flex-direction: column;
+        margin: 0px -50px;
     }
 
     #whatido-details p {
@@ -534,6 +535,22 @@ footer .social-icons img {
     }
 
     .portfolio-item {
-        padding-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .portfolio-item-content {
+        margin-bottom: 25px;
+    }
+
+    .portfolio-item img {
+        margin-bottom: 25px;
+    }
+
+    .portfolio-item button {
+        margin-bottom: 25px;
     }
 }
