@@ -10,57 +10,166 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Ensure padding and borders are included in the total width and height */
+            box-sizing: border-box;
+            /* Ensure padding and borders are included in the total width and height */
         }
 
         body {
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            font-family: 'Spectral', serif; /* Add font family for body */
+            overflow-x: hidden;
+            /* Prevent horizontal scrolling */
+            font-family: 'Spectral', serif;
+            /* Add font family for body */
+        }
+
+        header {
+            background-color: transparent;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-colored {
+            background-color: #000000;
+            transition: background-color 0.5s;
+        }
+
+        nav {
+            background-color: transparent;
+            display: flex;
+            font-family: 'Montserrat', serif;
+        }
+
+        nav ul {
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav li {
+            height: 40px;
+        }
+
+        nav a {
+            height: 100%;
+            padding: 0px 30px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: rgb(255, 255, 255);
+        }
+
+        nav a:hover {
+            color: #f0f0f0;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 200px;
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.333);
+            backdrop-filter: blur(4px);
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-top: 10px;
+            font-family: 'Montserrat', serif;
+        }
+
+        .sidebar li {
+            width: 100%;
+        }
+
+        .sidebar a {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .hideOnMobile {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .sidebar {
+                width: 100%;
+            }
         }
 
         .hero {
-            position: relative; /* Set positioning to allow absolute positioning of the video */
-            height: 100vh; /* Full viewport height */
-            width: 100%; /* Full width */
+            position: relative;
+            /* Set positioning to allow absolute positioning of the video */
+            height: 100vh;
+            /* Full viewport height */
+            width: 100%;
+            /* Full width */
             color: white;
             font-weight: 900;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1; /* Ensure hero content is above the video */
-            padding: 20px; /* Add padding for smaller screens */
+            z-index: 1;
+            /* Ensure hero content is above the video */
+            padding: 20px;
+            /* Add padding for smaller screens */
         }
 
         .hero img {
             border-radius: 50%;
             border: 1px solid black;
-            width: 25vw; /* Responsive width */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 250px; /* Max width */
-            object-fit: cover; /* Cover the img */
+            width: 25vw;
+            /* Responsive width */
+            height: auto;
+            /* Maintain aspect ratio */
+            max-width: 250px;
+            /* Max width */
+            object-fit: cover;
+            /* Cover the img */
             margin-bottom: 1.1rem;
             margin-top: 50px;
         }
 
         .hero h1 {
             padding-bottom: 25px;
-            font-size: 2rem; /* Responsive font size */
+            font-size: 2rem;
+            /* Responsive font size */
         }
 
         .hero p {
-            font-size: 1.5rem; /* Responsive font size */
+            font-size: 1.5rem;
+            /* Responsive font size */
             font-weight: 500;
         }
 
         .background-clip {
-            position: absolute; /* Position the video absolutely to cover the hero section */
+            position: absolute;
+            /* Position the video absolutely to cover the hero section */
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%; /* Ensure it covers the entire hero section */
-            object-fit: cover; /* Make the video cover the whole area */
-            z-index: -1; /* Send the video behind the hero content */
+            height: 100%;
+            /* Ensure it covers the entire hero section */
+            object-fit: cover;
+            /* Make the video cover the whole area */
+            z-index: -1;
+            /* Send the video behind the hero content */
         }
 
         .summary {
@@ -68,21 +177,24 @@
             align-items: flex-start;
             margin: 50px;
             gap: 2rem;
+            margin: 100px;
         }
 
         .pic-self {
             display: block;
-            max-width: 300px; /* Responsive width */
-            width: 30vw; /* Responsive width */
-            height: auto; /* Maintain aspect ratio */
+            max-width: 350px;
+            width: 30vw;
+            height: auto;
             margin: 25px 0px;
             border-radius: 5%;
+
         }
 
         #about {
             width: 100%;
             text-align: left;
-            margin-left: 20px; /* Add left margin for spacing */
+            margin-left: 50px;
+            /* Add left margin for spacing */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,26 +203,29 @@
 
         #about h2 {
             padding-top: 20px;
-            padding-bottom: 30px;
-            font-size: 1.75rem; /* Responsive font size */
+            padding-bottom: 50px;
+            font-size: 2rem;
+            /* Responsive font size */
             font-weight: 300;
         }
 
         #about p {
             padding-bottom: 30px;
-            font-size: 1.2rem; /* Responsive font size */
+            font-size: 1.2rem;
+            line-height: 50px;
+            /* Responsive font size */
         }
 
         #whatido {
-            padding: 50px 100px;
+            padding: 100px;
             background-color: #e1e1e1;
         }
 
         #whatido h2 {
             display: flex;
             justify-content: center;
-            font-size: 1.75rem;
-            padding-bottom: 40px;
+            font-size: 2rem;
+            padding-bottom: 75px;
             padding-top: 50px;
             font-weight: 300;
         }
@@ -121,36 +236,52 @@
             padding: 0 10%;
         }
 
-        #whatido-details > div {
+        #whatido-details>div {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
-            text-align: center; /* Center text content */
+            align-items: center;
+            /* Center content horizontally */
+            text-align: center;
+            /* Center text content */
+        }
+
+        #whatido-details h3 {
+            padding-bottom: 25px;
+            font-size: x-large;
+            font-weight: 700;
         }
 
         #whatido-details p {
             padding: 15px 25px 75px 25px;
+            line-height: 30px;
         }
 
         #whatido-details img {
             max-width: 100px;
             border-radius: 50%;
-            margin-bottom: 25px; /* Add some space between the image and the title */
+            margin-bottom: 50px;
+            /* Add some space between the image and the title */
         }
 
         .table {
-            display: grid; /* Use grid layout for the table */
-            grid-template-columns: 1fr 1fr; /* Create two equal columns */
-            width: 100%; /* Set the table to occupy the full width */
+            display: grid;
+            /* Use grid layout for the table */
+            grid-template-columns: 1fr 1fr;
+            /* Create two equal columns */
+            width: 100%;
+            /* Set the table to occupy the full width */
         }
 
         .row {
-            display: contents; /* Use contents to not create additional box */
+            display: contents;
+            /* Use contents to not create additional box */
         }
 
         .cell {
-            border: 1px solid black; /* Add border to cells */
-            padding: 10px; /* Add padding inside cells */
+            border: 1px solid black;
+            /* Add border to cells */
+            padding: 10px;
+            /* Add padding inside cells */
             margin: 5px
         }
 
@@ -162,13 +293,13 @@
             font-weight: 300;
             display: flex;
             justify-content: center;
-            font-size: 1.75rem;
-            padding-bottom: 25px;
+            font-size: 2rem;
+            padding: 100px 0 75px 0;
         }
 
         .portfolio-item {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
             padding: 25px 50px;
         }
 
@@ -184,6 +315,10 @@
             height: auto;
             display: flex;
             justify-content: center;
+        }
+
+        #tlh {
+            margin-left: 50px;
         }
 
         .portfolio-item button {
@@ -241,7 +376,16 @@
 
         .contact {
             padding: 2rem;
-            background-color: #f4f4f4;
+            background-color: #e1e1e1;
+            padding-bottom: 200px;
+        }
+
+        .contact h2 {
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            padding: 100px 0 75px 0;
         }
 
         .contact form {
@@ -275,32 +419,67 @@
             background-color: #555;
         }
 
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+        }
+
+        footer .social-icons img {
+            width: 25px;
+            height: 25px;
+        }
+
         /* Media Queries for additional responsiveness */
         @media (max-width: 768px) {
             .summary {
-                margin: 20px; /* Less margin for smaller screens */
+                margin: 20px;
+                /* Less margin for smaller screens */
             }
 
             .hero h1 {
-                font-size: 1rem; /* Adjust font size */
+                font-size: 1rem;
+                /* Adjust font size */
             }
 
             .hero p {
-                font-size: 1rem; /* Adjust font size */
+                font-size: 1rem;
+                /* Adjust font size */
             }
 
             #about h2 {
-                font-size: 1rem; /* Adjust font size */
+                font-size: 1rem;
+                /* Adjust font size */
             }
 
             #about p {
-                font-size: 1rem; /* Adjust font size */
+                font-size: 1rem;
+                /* Adjust font size */
             }
         }
 
         @media (max-width: 600px) {
             .hero img {
-                width: 70vw; /* Adjust for very small screens */
+                width: 70vw;
+                /* Adjust for very small screens */
             }
 
             .pic-self {
@@ -311,9 +490,31 @@
 </head>
 
 <body>
-
     <header>
-
+        <nav>
+            <a href="index.html" id="logo"><img src="movad-logo-main.png" width="165" height="70"></a>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a></li>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">EXPERIENCE</a></li>
+                <li><a href="">CONTACT</a></li>
+            </ul>
+            <ul>
+                <li class="hideOnMobile"><a href="">HOME</a></li>
+                <li class="hideOnMobile"><a href="">ABOUT</a></li>
+                <li class="hideOnMobile"><a href="">EXPERIENCE</a></li>
+                <li class="hideOnMobile"><a href="">CONTACT</a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg"
+                            height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg></a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
@@ -346,6 +547,16 @@
                 gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut
                 ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.
                 Maecenas fermentum consequat mi. Donec fermentum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.</p>
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra,
+                est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod
+                gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut
+                ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam.
+                Maecenas fermentum consequat mi. Donec fermentum.</p>
         </div>
     </section>
 
@@ -355,17 +566,24 @@
             <div>
                 <img src="digital-marketing-icon.jpg" alt="">
                 <h3>Digital Marketing</h3>
-                <p>Connecting brands with audiences online through strategies like social media, SEO, and email campaigns are my strong suits. It’s essential for brand awareness, allowing you to track engagement and adapt campaigns in real time.</p>
+                <p>Connecting brands with audiences online through strategies like social media, SEO, and email
+                    campaigns are my strong suits. It’s essential for brand awareness, allowing you to track engagement
+                    and adapt campaigns in real time.</p>
             </div>
             <div>
                 <img src="smm-icon.jpg" alt="">
                 <h3>Social Media Management</h3>
-                <p>Creating, scheduling, and monitoring content across platforms is the basis of social media management. Building an online presence for your brand is the #1 goal of utilizing social media. It’s crucial for brand awareness, allowing you to connect directly with your target audience, respond to feedback, and foster a loyal community.</p>
+                <p>Creating, scheduling, and monitoring content across platforms is the basis of social media
+                    management. Building an online presence for your brand is the #1 goal of utilizing social media.
+                    It’s crucial for brand awareness, allowing you to connect directly with your target audience,
+                    respond to feedback, and foster a loyal community.</p>
             </div>
             <div>
                 <img src="content-creation-icon.jpg" alt="">
                 <h3>Content Creation</h3>
-                <p>Crafting engaging and relevant materials that captivate target audiences across various platforms. From writing articles to producing videos and graphics,my goal is to deliver high-quality content that aligns with your brand’s voice. </p>
+                <p>Crafting engaging and relevant materials that captivate target audiences across various platforms.
+                    From writing articles to producing videos and graphics,my goal is to deliver high-quality content
+                    that aligns with your brand’s voice. </p>
             </div>
         </div>
     </section>
@@ -377,17 +595,17 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Pet Paradise</h2>
-                        <p>March 2019-February 2021</p>
-                        <p>Part-time | In-person</p>
+                            <p>March 2019-February 2021</p>
+                            <p>Part-time | In-person</p>
                     </div>
                     <img src="pet_logo.png" class="circle" alt="Pet Paradise Logo">
                     <button onclick="openPopup('popup1')" class="popup_button">Learn More</button>
-                </section>            
+                </section>
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Barstool Sports</h2>
-                        <p>January 2020-January 2021</p>
-                        <p>Internship | Remote</p>
+                            <p>January 2020-January 2021</p>
+                            <p>Internship | Remote</p>
                     </div>
                     <img src="barstool_logo.png" alt="Barstool Sports Logo">
                     <button onclick="openPopup('popup2')" class="popup_button">Learn More</button>
@@ -397,8 +615,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Crystal Portal</h2>
-                        <p>May 2021-September 2021</p>
-                        <p>Part-time | In-person</p>
+                            <p>May 2021-September 2021</p>
+                            <p>Part-time | In-person</p>
                     </div>
                     <img src="crystal_logo.png" class="circle" alt="Crystal Portal Logo">
                     <button onclick="openPopup('popup3')" class="popup_button">Learn More</button>
@@ -406,10 +624,10 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>TLH Downtown</h2>
-                        <p>May 2022-Current</p>
-                        <p>Contract | In-person</p>
+                            <p>May 2022-Current</p>
+                            <p>Contract | In-person</p>
                     </div>
-                    <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo">
+                    <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo" id="tlh">
                     <button onclick="openPopup('popup4')" class="popup_button">Learn More</button>
                 </section>
             </div>
@@ -417,8 +635,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Olde Fields Clothing</h2>
-                        <p>February 2023-August 2023</p>
-                        <p>Part-time | In-person</p>
+                            <p>February 2023-August 2023</p>
+                            <p>Part-time | In-person</p>
                     </div>
                     <img src="olde_logo.png" alt="Olde Fields Clothing Logo">
                     <button onclick="openPopup('popup5')" class="popup_button">Learn More</button>
@@ -426,8 +644,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>SkillStorm</h2>
-                        <p>January 2023-February 2024</p>
-                        <p>Part-time | Remote</p>
+                            <p>January 2023-February 2024</p>
+                            <p>Part-time | Remote</p>
                     </div>
                     <img src="skillstorm_logo.png" alt="SkillStorm Logo">
                     <button onclick="openPopup('popup6')" class="popup_button">Learn More</button>
@@ -437,8 +655,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>RoadTrek</h2>
-                        <p>August 2023-February 2024</p>
-                        <p>Part-time | Remote</p>
+                            <p>August 2023-February 2024</p>
+                            <p>Part-time | Remote</p>
                     </div>
                     <img src="roadtrek_logo.png" class="circle" alt="RoadTrek Logo">
                     <button onclick="openPopup('popup7')" class="popup_button">Learn More</button>
@@ -446,8 +664,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>EKS Events</h2>
-                        <p>February 2024-August 2024</p>
-                        <p>Full-time | Remote</p>
+                            <p>February 2024-August 2024</p>
+                            <p>Full-time | Remote</p>
                     </div>
                     <img src="eks_logo.png" class="circle" alt="EKS Events Logo">
                     <button onclick="openPopup('popup8')" class="popup_button">Learn More</button>
@@ -457,8 +675,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Joe Mineo Creative</h2>
-                        <p>February 2024-August 2024</p>
-                        <p>Full-time | Remote</p>
+                            <p>February 2024-August 2024</p>
+                            <p>Full-time | Remote</p>
                     </div>
                     <img src="joe_logo.png" class="circle" alt="Joe Mineo Creative Logo">
                     <button onclick="openPopup('popup9')" class="popup_button">Learn More</button>
@@ -466,8 +684,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Fox Events</h2>
-                        <p>February 2024-August 2024</p>
-                        <p>Full-time | Remote</p>
+                            <p>February 2024-August 2024</p>
+                            <p>Full-time | Remote</p>
                     </div>
                     <img src="afox_logo.png" class="circle" alt="Fox Events Logo">
                     <button onclick="openPopup('popup10')" class="popup_button">Learn More</button>
@@ -477,8 +695,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Soiree Telluride</h2>
-                        <p>February 2024-August 2024</p>
-                        <p>Full-time | Remote</p>
+                            <p>February 2024-August 2024</p>
+                            <p>Full-time | Remote</p>
                     </div>
                     <img src="soiree_logo.png" class="circle" alt="Soiree Telluride Logo">
                     <button onclick="openPopup('popup11')" class="popup_button">Learn More</button>
@@ -486,8 +704,8 @@
                 <section class="portfolio-item">
                     <div class="portfolio-item-content">
                         <h3>Collins Korman Events</h2>
-                        <p>February 2024-August 2024</p>
-                        <p>Full-time | Remote</p>
+                            <p>February 2024-August 2024</p>
+                            <p>Full-time | Remote</p>
                     </div>
                     <img src="collins_logo.png" class="circle" alt="Collins Korman Events Logo">
                     <button onclick="openPopup('popup12')" class="popup_button">Learn More</button>
@@ -527,70 +745,99 @@
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup4')">&times;</span>
                 <h2>TLH Downtown</h2>
-                <p>Upon joining TLH Downtown, I embarked on my first full-time in-house social media management role. I took charge of various responsibilities, including gathering and editing content, scheduling and posting on social media platforms, and executing marketing campaigns. My role extended to fostering collaborations, managing interns, and ensuring consistent and engaging content that promoted the vibrant essence of TLH Downtown. This experience allowed me to refine my skills and make a significant impact on our online presence.</p>
+                <p>Upon joining TLH Downtown, I embarked on my first full-time in-house social media management role. I
+                    took charge of various responsibilities, including gathering and editing content, scheduling and
+                    posting on social media platforms, and executing marketing campaigns. My role extended to fostering
+                    collaborations, managing interns, and ensuring consistent and engaging content that promoted the
+                    vibrant essence of TLH Downtown. This experience allowed me to refine my skills and make a
+                    significant impact on our online presence.</p>
             </div>
         </div>
         <div id="popup5" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup5')">&times;</span>
                 <h2>Olde Fields Clothing</h2>
-                <p>At Olde Fields Clothing, I was part of the social media marketing team, where I expanded my experience in product marketing on a retail level. I contributed to creating and implementing marketing strategies that showcased our products effectively. My responsibilities included content creation, editing, scheduling, and posting, as well as engaging with our online community. This role allowed me to deepen my understanding of retail marketing on a local level.</p>
+                <p>At Olde Fields Clothing, I was part of the social media marketing team, where I expanded my
+                    experience in product marketing on a retail level. I contributed to creating and implementing
+                    marketing strategies that showcased our products effectively. My responsibilities included content
+                    creation, editing, scheduling, and posting, as well as engaging with our online community. This role
+                    allowed me to deepen my understanding of retail marketing on a local level.</p>
             </div>
         </div>
         <div id="popup6" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup6')">&times;</span>
                 <h2>SkillStorm</h2>
-                <p>During my time at Skillstorm, I worked directly with the CMO to enhance our online presence, diving into web design and broader digital marketing beyond social media.  I played a key role in executing large marketing campaigns, enhancing our website, and developing comprehensive digital strategies.</p>
+                <p>During my time at Skillstorm, I worked directly with the CMO to enhance our online presence, diving
+                    into web design and broader digital marketing beyond social media. I played a key role in executing
+                    large marketing campaigns, enhancing our website, and developing comprehensive digital strategies.
+                </p>
             </div>
         </div>
         <div id="popup7" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup7')">&times;</span>
                 <h2>Roadtrek</h2>
-                <p>Roadtrek allowed me to on creating travel content that showcased their campervans. I provided content for a marketing campaign, producing content for their social media and marketing platforms. This opportunity allowed me to combine my passion for marketing with my love for travel.</p>
+                <p>Roadtrek allowed me to on creating travel content that showcased their campervans. I provided content
+                    for a marketing campaign, producing content for their social media and marketing platforms. This
+                    opportunity allowed me to combine my passion for marketing with my love for travel.</p>
             </div>
         </div>
         <div id="popup8" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup8')">&times;</span>
                 <h2>EKS Events</h2>
-                <p>With EKS Events, I collaborated with my team at an outside marketing firm to develop and execute a comprehensive social media strategy. We focused on highlighting the elegance and sophistication of their wedding and event planning services. My role involved producing and posting visually stunning content that captured the essence of their high-end events.</p>
+                <p>With EKS Events, I collaborated with my team at an outside marketing firm to develop and execute a
+                    comprehensive social media strategy. We focused on highlighting the elegance and sophistication of
+                    their wedding and event planning services. My role involved producing and posting visually stunning
+                    content that captured the essence of their high-end events.</p>
             </div>
         </div>
         <div id="popup9" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup9')">&times;</span>
                 <h2>Joe Mineo Creative</h2>
-                <p>While managing the social media for Joe Mineo Creative, I worked closely with my firm's team to create and share captivating content that showcased event planning services. We emphasized Joe's unique and creative approach, producing posts that resonated with their audience and highlighted the extraordinary events designed by Joe and his team.</p>
+                <p>While managing the social media for Joe Mineo Creative, I worked closely with my firm's team to
+                    create and share captivating content that showcased event planning services. We emphasized Joe's
+                    unique and creative approach, producing posts that resonated with their audience and highlighted the
+                    extraordinary events designed by Joe and his team.</p>
             </div>
         </div>
         <div id="popup10" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup10')">&times;</span>
                 <h2>Fox Events</h2>
-                <p>For Fox Events, I led the social media efforts with my team, focusing on curating and posting content that reflected their dynamic and personalized event planning services. We aimed to engage our audience with behind-the-scenes glimpses and highlights of exceptional events, boosting their brand visibility and appeal across various social media platforms.</p>
+                <p>For Fox Events, I led the social media efforts with my team, focusing on curating and posting content
+                    that reflected their dynamic and personalized event planning services. We aimed to engage our
+                    audience with behind-the-scenes glimpses and highlights of exceptional events, boosting their brand
+                    visibility and appeal across various social media platforms.</p>
             </div>
         </div>
         <div id="popup11" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup11')">&times;</span>
                 <h2>Soiree Telluride</h2>
-                <p>At Soiree Telluride, I managed the social media content creation and posting, working alongside my team to present their luxurious and destination-focused event planning services. Our strategy involved showcasing breathtaking event locations and meticulous planning details, captivating their audience with the beauty and uniqueness of their Telluride events.</p>
+                <p>At Soiree Telluride, I managed the social media content creation and posting, working alongside my
+                    team to present their luxurious and destination-focused event planning services. Our strategy
+                    involved showcasing breathtaking event locations and meticulous planning details, captivating their
+                    audience with the beauty and uniqueness of their Telluride events.</p>
             </div>
         </div>
         <div id="popup12" class="popup">
             <div class="popup-content">
                 <span class="close" onclick="closePopup('popup12')">&times;</span>
                 <h2>Collins Korman Events</h2>
-                <p>Managing social media for Collins Korman Events, I was brought on as a contractor to develop content that highlighted the expertise of the Collins Korman team in crafting memorable weddings and events. We focused on producing and posting engaging visuals that emphasized an attention to detail and personalized experience.</p>
+                <p>Managing social media for Collins Korman Events, I was brought on as a contractor to develop content
+                    that highlighted the expertise of the Collins Korman team in crafting memorable weddings and events.
+                    We focused on producing and posting engaging visuals that emphasized an attention to detail and
+                    personalized experience.</p>
             </div>
         </div>
     </section>
 
-    
+
     <section class="contact">
-        <h2>Contact</h2>
+        <h2>CONTACT</h2>
         <form action="contact.html" method="POST">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -601,6 +848,14 @@
             <button type="submit">Send</button>
         </form>
     </section>
+
+    <footer>
+        <p>&copy; Grow With Grace LLC. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/brenna-coheley-607764269/"><img src="linkedin-logo.jpg"></a>
+            <a href="https://www.instagram.com/brennaacoheley/"><img src="ig-logo.jpg"></a>
+        </div>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>
