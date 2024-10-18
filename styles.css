@@ -163,12 +163,12 @@ nav a:hover {
     /* Send the video behind the hero content */
 }
 
-.summary {
+#summary {
     display: flex;
     align-items: flex-start;
-    margin: 50px;
     gap: 2rem;
-    margin: 100px;
+    margin: 0px 100px;
+    padding: 100px 0px;
 }
 
 .pic-self {
@@ -188,10 +188,12 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-self: center;
+    scroll-margin-top: 20px;
+
+    /* Adjust this value if you have a fixed header */
 }
 
 #about h2 {
-    padding-top: 20px;
     padding-bottom: 50px;
     font-size: 2rem;
     /* Responsive font size */
@@ -205,13 +207,13 @@ nav a:hover {
     /* Responsive font size */
 }
 
-#whatido {
-    padding: 100px;
+#services {
+    padding: 100px 100px 150px 100px;
     background-color: #e1e1e1;
     font-family: 'Montserrat', serif;
 }
 
-#whatido h2 {
+#services h2 {
     display: flex;
     justify-content: center;
     font-size: 2rem;
@@ -445,7 +447,7 @@ footer .social-icons img {
         width: 70vw;
     }
 
-    .summary {
+    #summary {
         margin: 100px 65px 100px 0px;
         display: flex;
     }
@@ -472,7 +474,7 @@ footer .social-icons img {
 }
 
 @media (max-width: 750px) {
-    .summary {
+    #summary {
         margin: 20px;
         /* Less margin for smaller screens */
     }
@@ -506,7 +508,7 @@ footer .social-icons img {
         font-size: 1.5rem;
     }
 
-    .summary {
+    #summary {
         margin: 50px 15px 50px -50px;
         display: flex;
     }
