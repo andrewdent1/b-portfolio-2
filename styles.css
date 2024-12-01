@@ -203,14 +203,14 @@ nav a:hover {
 #about p {
     padding-bottom: 30px;
     font-size: 1.2rem;
-    line-height: 50px;
+    line-height: 40px;
     /* Responsive font size */
 }
 
 #services {
     padding: 100px 100px 150px 100px;
     font-family: 'Montserrat', serif;
-    background-color: #9cc19b;
+    background-color: #9cc19b72;
 }
 
 #services h2 {
@@ -220,7 +220,6 @@ nav a:hover {
     padding-bottom: 75px;
     padding-top: 50px;
     font-weight: 500;
-    color: white;
 }
 
 #whatido-details {
@@ -237,11 +236,11 @@ nav a:hover {
     /* Center content horizontally */
     text-align: center;
     /* Center text content */
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(245, 245, 245);
     margin: 10px;
     border-radius: 10px;
     padding: 50px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.33);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.33);
 }
 
 #whatido-details div:hover {
