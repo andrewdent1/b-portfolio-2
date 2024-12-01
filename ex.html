@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal {
+            display: none;
+        }
+
+        .modal.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-white min-h-screen flex items-center justify-center">
+    <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center mb-8">EXPERIENCE</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Grid Item Template -->
+            <div class="flex flex-col md:flex-row items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold">Pet Paradise</h2>
+                    <p class="text-sm text-gray-700">March 2019 - February 2021<br>Part-time | In-person</p>
+                </div>
+                <img src="https://via.placeholder.com/100" alt="Pet Paradise" class="w-20 h-20 rounded-full">
+                <button
+                    class="btn-modal bg-white border border-gray-700 px-4 py-2 rounded text-gray-800 hover:bg-gray-200"
+                    data-info="Pet Paradise Details...">
+                    View More
+                </button>
+            </div>
+
+            <!-- Repeat this template for other companies -->
+            <!-- Example: Barstool Sports -->
+            <div class="flex flex-col md:flex-row items-center gap-4 bg-gray-100 p-6 rounded-lg shadow-lg">
+                <div class="flex-1">
+                    <h2 class="text-xl font-bold">Barstool Sports</h2>
+                    <p class="text-sm text-gray-700">January 2020 - January 2021<br>Internship | Remote</p>
+                </div>
+                <img src="https://via.placeholder.com/100" alt="Barstool Sports" class="w-20 h-20 rounded-full">
+                <button
+                    class="btn-modal bg-white border border-gray-700 px-4 py-2 rounded text-gray-800 hover:bg-gray-200"
+                    data-info="Barstool Sports Details...">
+                    View More
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-1/3">
+            <h2 class="text-2xl font-bold mb-4">More Information</h2>
+            <p id="modal-content" class="text-gray-700"></p>
+            <button onclick="closeModal()" class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Open modal and set dynamic content
+        document.querySelectorAll('.btn-modal').forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = document.getElementById('modal');
+                document.getElementById('modal-content').textContent = button.dataset.info;
+                modal.classList.add('active');
+            });
+        });
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+    </script>
+</body>
+
+</html>
