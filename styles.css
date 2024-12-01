@@ -22,7 +22,7 @@ header {
 }
 
 .header-colored {
-    background-color: #000000;
+    background-color: #31331f;
     transition: background-color 0.5s;
 }
 
@@ -210,7 +210,7 @@ nav a:hover {
 #services {
     padding: 100px 100px 150px 100px;
     font-family: 'Montserrat', serif;
-    background-color: #9cc19b72;
+    background-color: #645d3b;
 }
 
 #services h2 {
@@ -220,6 +220,7 @@ nav a:hover {
     padding-bottom: 75px;
     padding-top: 50px;
     font-weight: 500;
+    color: #e8e3da;
 }
 
 #whatido-details {
@@ -236,7 +237,7 @@ nav a:hover {
     /* Center content horizontally */
     text-align: center;
     /* Center text content */
-    background-color: rgb(245, 245, 245);
+    background-color: #e8e3da;
     margin: 10px;
     border-radius: 10px;
     padding: 50px;
