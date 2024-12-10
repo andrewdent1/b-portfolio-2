@@ -55,7 +55,7 @@
     </section>
 
     <section id="summary">
-        <div>
+        <div id="pic-self-div">
             <img src="b-self-1.JPG" alt="" class="pic-self">
             <img src="b-self-2.JPG" alt="" class="pic-self">
             <img src="b-self-3.JPG" alt="" class="pic-self">
@@ -113,127 +113,90 @@
     </section>
 
     <section id="portfolio">
-        <h2>EXPERIENCE</h2>
-        <div class="table">
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Pet Paradise</h2>
-                            <p>March 2019-February 2021</p>
-                            <p>Part-time | In-person</p>
-                    </div>
-                    <img src="pet_logo.png" class="circle" alt="Pet Paradise Logo">
-                    <button onclick="openPopup('popup1')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Barstool Sports</h2>
-                            <p>January 2020-January 2021</p>
-                            <p>Internship | Remote</p>
-                    </div>
-                    <img src="barstool_logo.png" alt="Barstool Sports Logo">
-                    <button onclick="openPopup('popup2')" class="popup_button">Learn More</button>
-                </section>
+        <h1>EXPERIENCE</h1>
+        <div class="container-wrapper">
+            <button class="arrow arrow-left" onclick="slide(-1)">&#8592;</button>
+            <div class="container">
+                <div class="grid-item">
+                    <h2>Pet Paradise</h2>
+                    <p>March 2019 - February 2021<br>Part-time | In-person</p>
+                    <img src="pet_logo.png" alt="Pet Paradise">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Barstool Sports</h2>
+                    <p>January 2020 - January 2021<br>Internship | Remote</p>
+                    <img src="barstool_logo.png" alt="Barstool Sports">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Crystal Portal</h2>
+                    <p>May 2021 - September 2021<br>Part-time | In-person</p>
+                    <img src="crystal_logo.png" alt="">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>TLH Downtown</h2>
+                    <p>May 2022 - Current<br>Contract | Remote</p>
+                    <img src="tlh_logo.png" alt="">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Olde Fields Clothing</h2>
+                    <p>February 2023 - August 2023<br>Part-time | In-person</p>
+                    <img src="olde_logo.png" alt="">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>SkillStorm</h2>
+                    <p>January 2023 - January 2024<br>Contract | Remote</p>
+                    <img src="skillstorm_logo.png" alt="">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Roadtrek</h2>
+                    <p>August 2023 - February 2024<br>Contract | Remote</p>
+                    <img src="roadtrek_logo.png" alt="">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>EKS Events</h2>
+                    <p>February 2024 - August 2024<br>Full-time | Remote</p>
+                    <img src="eks_logo.png" alt="">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Joe Mineo Creative</h2>
+                    <p>February 2024 - August 2024<br>Full-time | Remote</p>
+                    <img src="joe_logo.png" alt="">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Fox Events</h2>
+                    <p>February 2024 - August 2024<br>Full-time | Remote</p>
+                    <img src="afox_logo.png" alt="">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Soiree Telluride</h2>
+                    <p>February 2024 - August 2024<br>Full-time | Remote</p>
+                    <img src="soiree_logo.png" alt="">
+                    <button class="btn-modal" data-info="Pet Paradise Details...">View More</button>
+                </div>
+                <div class="grid-item">
+                    <h2>Collins Korman Events</h2>
+                    <p>February 2024 - August 2024<br>Full-time | Remote</p>
+                    <img src="collins_logo.png" alt="">
+                    <button class="btn-modal" data-info="Barstool Sports Details...">View More</button>
+                </div>
             </div>
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Crystal Portal</h2>
-                            <p>May 2021-September 2021</p>
-                            <p>Part-time | In-person</p>
-                    </div>
-                    <img src="crystal_logo.png" class="circle" alt="Crystal Portal Logo">
-                    <button onclick="openPopup('popup3')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>TLH Downtown</h2>
-                            <p>May 2022-Current</p>
-                            <p>Contract | In-person</p>
-                    </div>
-                    <img src="tlh_logo.png" class="circle" alt="TLH Downtown Logo" id="tlh">
-                    <button onclick="openPopup('popup4')" class="popup_button">Learn More</button>
-                </section>
-            </div>
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Olde Fields Clothing</h2>
-                            <p>February 2023-August 2023</p>
-                            <p>Part-time | In-person</p>
-                    </div>
-                    <img src="olde_logo.png" alt="Olde Fields Clothing Logo">
-                    <button onclick="openPopup('popup5')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>SkillStorm</h2>
-                            <p>January 2023-February 2024</p>
-                            <p>Part-time | Remote</p>
-                    </div>
-                    <img src="skillstorm_logo.png" alt="SkillStorm Logo">
-                    <button onclick="openPopup('popup6')" class="popup_button">Learn More</button>
-                </section>
-            </div>
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>RoadTrek</h2>
-                            <p>August 2023-February 2024</p>
-                            <p>Part-time | Remote</p>
-                    </div>
-                    <img src="roadtrek_logo.png" class="circle" alt="RoadTrek Logo">
-                    <button onclick="openPopup('popup7')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>EKS Events</h2>
-                            <p>February 2024-August 2024</p>
-                            <p>Full-time | Remote</p>
-                    </div>
-                    <img src="eks_logo.png" class="circle" alt="EKS Events Logo">
-                    <button onclick="openPopup('popup8')" class="popup_button">Learn More</button>
-                </section>
-            </div>
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Joe Mineo Creative</h2>
-                            <p>February 2024-August 2024</p>
-                            <p>Full-time | Remote</p>
-                    </div>
-                    <img src="joe_logo.png" class="circle" alt="Joe Mineo Creative Logo">
-                    <button onclick="openPopup('popup9')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Fox Events</h2>
-                            <p>February 2024-August 2024</p>
-                            <p>Full-time | Remote</p>
-                    </div>
-                    <img src="afox_logo.png" class="circle" alt="Fox Events Logo">
-                    <button onclick="openPopup('popup10')" class="popup_button">Learn More</button>
-                </section>
-            </div>
-            <div class="row">
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Soiree Telluride</h2>
-                            <p>February 2024-August 2024</p>
-                            <p>Full-time | Remote</p>
-                    </div>
-                    <img src="soiree_logo.png" class="circle" alt="Soiree Telluride Logo">
-                    <button onclick="openPopup('popup11')" class="popup_button">Learn More</button>
-                </section>
-                <section class="portfolio-item">
-                    <div class="portfolio-item-content">
-                        <h3>Collins Korman Events</h2>
-                            <p>February 2024-August 2024</p>
-                            <p>Full-time | Remote</p>
-                    </div>
-                    <img src="collins_logo.png" class="circle" alt="Collins Korman Events Logo">
-                    <button onclick="openPopup('popup12')" class="popup_button">Learn More</button>
-                </section>
+            <button class="arrow arrow-right" onclick="slide(1)">&#8594;</button>
+        </div>
+    
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p id="modal-info"></p>
+                <button id="close-modal">Close</button>
             </div>
         </div>
 
