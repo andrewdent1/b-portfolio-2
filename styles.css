@@ -2,14 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Ensure padding and borders are included in the total width and height */
 }
 
 body {
     overflow: hidden;
-    /* Prevent horizontal scrolling */
     font-family: 'Montserrat', serif;
-    /* Add font family for body */
 }
 
 #logo img {
@@ -688,7 +685,7 @@ footer .social-icons img {
     }
 
     .grid-item {
-        width: 90vw;
+        max-width: 90vw;
         margin: 0 5vw;
     }
 }
