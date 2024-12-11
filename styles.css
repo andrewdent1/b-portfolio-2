@@ -22,7 +22,7 @@ header {
 }
 
 .header-colored {
-    background-color: #31331f;
+    background-color: #18251F;
     transition: background-color 0.5s;
 }
 
@@ -211,7 +211,7 @@ nav a:hover {
 #services {
     padding: 100px 100px 150px 100px;
     font-family: 'Montserrat', serif;
-    background-color: #645d3b;
+    background-color: #c2d6cc7d;
 }
 
 #services h2 {
@@ -221,7 +221,7 @@ nav a:hover {
     padding-bottom: 75px;
     padding-top: 50px;
     font-weight: 500;
-    color: #e8e3da;
+    color: black;
 }
 
 #whatido-details {
@@ -238,7 +238,7 @@ nav a:hover {
     /* Center content horizontally */
     text-align: center;
     /* Center text content */
-    background-color: #e8e3da;
+    background-color: #F3F7F5;
     margin: 10px;
     border-radius: 10px;
     padding: 50px;
@@ -292,7 +292,6 @@ nav a:hover {
 #portfolio-main {
     padding: 0px 50px;
     font-family: Arial, sans-serif;
-    background-color: #fff;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -308,6 +307,7 @@ nav a:hover {
     overflow: hidden;
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .container {
@@ -318,16 +318,16 @@ nav a:hover {
 
 .grid-item {
     width: 300px;
-    background-color: #f0f0f0;
+    background-color: #c2d6cc7d;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 10px 100px 10px;
+    margin: 0 0px 100px 25px;
 }
 
 .grid-item h2 {
@@ -455,9 +455,26 @@ nav a:hover {
 }
 
 .contact {
-    padding: 2rem;
-    background-color: #e1e1e1;
-    padding-bottom: 200px;
+    position: relative;
+    background: url('contact-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 40px;
+    overflow: hidden;
+    height: 80vh;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
 }
 
 #portfolio h1 {
@@ -466,6 +483,8 @@ nav a:hover {
     justify-content: center;
     font-size: 2rem;
     padding: 100px 0 75px 0;
+    background-color: white;
+    color: black;
 }
 
 .contact h2 {
@@ -474,6 +493,9 @@ nav a:hover {
     justify-content: center;
     font-size: 2rem;
     padding: 100px 0 75px 0;
+    color: white;
+    position: relative;
+    z-index: 1;
 }
 
 .contact form {
@@ -481,6 +503,8 @@ nav a:hover {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    position: relative;
+    /* Ensures content appears above the overlay */
 }
 
 .contact label {
@@ -508,7 +532,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: black;
+    background-color: #18251F;
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -648,5 +672,9 @@ footer .social-icons img {
 
     .portfolio-item button {
         margin-bottom: 25px;
+    }
+
+    #services {
+        padding: 100px 40px;
     }
 }
