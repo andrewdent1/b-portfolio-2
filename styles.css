@@ -5,7 +5,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Montserrat', serif;
 }
 
@@ -319,7 +319,7 @@ nav a:hover {
 }
 
 .grid-item {
-    min-width: 350px;
+    width: 350px;
     background-color: #c2d6cc7d;
     padding: 30px 20px;
     display: flex;
@@ -686,7 +686,7 @@ footer .social-icons img {
     }
 
     .grid-item {
-        max-width: 90vw;
+        width: 90vw;
         margin: 0 5vw;
     }
 }

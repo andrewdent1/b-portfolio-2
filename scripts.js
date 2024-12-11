@@ -36,8 +36,13 @@ document.querySelector('.close-btn').addEventListener('click', function (event) 
 const container = document.querySelector('.container');
 const items = document.querySelectorAll('.grid-item');
 let currentIndex = 0;
-const itemWidth = items[0].offsetWidth;
 
+// Function to determine the slide width based on screen size
+function getSlideWidth() {
+    return window.innerWidth < 750 ? window.innerWidth : items[0].offsetWidth;
+}
+
+// Update slide function to use dynamic width
 function slide(direction) {
     currentIndex += direction;
     if (currentIndex < 0) {
@@ -45,9 +50,11 @@ function slide(direction) {
     } else if (currentIndex >= items.length) {
         currentIndex = 0;
     }
-    container.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    const slideWidth = getSlideWidth(); // Calculate slide width
+    container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
 
+// Modal event listeners
 document.querySelectorAll('.btn-modal').forEach(button => {
     button.addEventListener('click', () => {
         document.getElementById('modal-info').textContent = button.getAttribute('data-info');
@@ -64,4 +71,10 @@ window.addEventListener('click', (event) => {
     if (event.target === modal) {
         modal.style.display = 'none';
     }
+});
+
+// Recalculate slide width on window resize
+window.addEventListener('resize', () => {
+    const slideWidth = getSlideWidth();
+    container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 });
