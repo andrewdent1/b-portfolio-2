@@ -294,10 +294,6 @@ nav a:hover {
     margin: 5px
 }
 
-#portfolio {
-    height: 80vh;
-}
-
 #portfolio-main {
     padding: 0px 50px;
     font-family: Arial, sans-serif;
@@ -305,7 +301,6 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
     overflow: hidden;
 }
 
@@ -317,6 +312,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     background-color: white;
+    height: 60vh;
 }
 
 .container {
@@ -373,7 +369,7 @@ nav a:hover {
 
 .arrow {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -410,16 +406,16 @@ nav a:hover {
 
 .modal-content {
     background: #fff;
-    padding: 20px;
+    padding: 40px 50px;
     border-radius: 8px;
-    width: 300px;
+    width: 500px;
     text-align: center;
 }
 
 #close-modal {
-    margin-top: 10px;
+    margin-top: 25px;
     padding: 10px 20px;
-    background-color: #e74c3c;
+    background-color: #18251fbb;
     color: white;
     border: none;
     border-radius: 5px;
@@ -427,7 +423,7 @@ nav a:hover {
 }
 
 #close-modal:hover {
-    background-color: #c0392b;
+    background-color: #18251F;
 }
 
 .popup {
@@ -534,9 +530,11 @@ nav a:hover {
 .contact button {
     padding: 0.5rem;
     border: none;
-    background-color: #333;
+    margin-top: 10;
+    background-color: #444444;
     color: white;
     cursor: pointer;
+    font-size: 0.75rem;
 }
 
 .contact button:hover {
