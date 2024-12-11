@@ -6,7 +6,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
     /* Prevent horizontal scrolling */
     font-family: 'Montserrat', serif;
     /* Add font family for body */
@@ -321,7 +321,7 @@ nav a:hover {
 }
 
 .grid-item {
-    width: 300px;
+    min-width: 350px;
     background-color: #c2d6cc7d;
     padding: 30px 20px;
     display: flex;
