@@ -317,7 +317,6 @@ nav a:hover {
 
 .container {
     display: flex;
-    gap: 25px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -686,5 +685,10 @@ footer .social-icons img {
 
     #services {
         padding: 100px 40px;
+    }
+
+    .grid-item {
+        width: 90vw;
+        margin: 0 5vw;
     }
 }
