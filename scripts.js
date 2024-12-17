@@ -37,41 +37,26 @@ const container = document.querySelector('.container');
 const items = document.querySelectorAll('.grid-item');
 let currentIndex = 0;
 
-// Function to determine the slide width based on screen size
+// Function to get the slide width based on screen size
 function getSlideWidth() {
-    return window.innerWidth < 750 ? window.innerWidth : items[0].offsetWidth;
+    return window.innerWidth < 750 ? window.innerWidth : 25 * window.innerWidth / 100;
 }
 
-// Update slide function to use dynamic width
+// Function to handle slide transitions
 function slide(direction) {
+    const maxIndex = window.innerWidth < 750 ? 12 : 9;  // 11 images when screen is small, 7 for larger screens
     currentIndex += direction;
+
+    // Loop back to the 8th image (index 7) if moving backward and beyond the first image
     if (currentIndex < 0) {
-        currentIndex = items.length - 1;
-    } else if (currentIndex >= items.length) {
-        currentIndex = 0;
+        currentIndex = maxIndex;  // Go to the 8th image (index 7)
+    } else if (currentIndex >= maxIndex) {
+        currentIndex = 0;  // Go back to the first image (index 0)
     }
-    const slideWidth = getSlideWidth(); // Calculate slide width
-    container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    const slideWidth = getSlideWidth(); // Get the dynamic slide width
+    container.style.transform = `translateX(-${currentIndex * slideWidth}px)`; // Move to the correct position
 }
-
-// Modal event listeners
-document.querySelectorAll('.btn-modal').forEach(button => {
-    button.addEventListener('click', () => {
-        document.getElementById('modal-info').textContent = button.getAttribute('data-info');
-        document.getElementById('modal').style.display = 'flex';
-    });
-});
-
-document.getElementById('close-modal').addEventListener('click', () => {
-    document.getElementById('modal').style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-    const modal = document.getElementById('modal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
-});
 
 // Recalculate slide width on window resize
 window.addEventListener('resize', () => {
