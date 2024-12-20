@@ -47,6 +47,10 @@ nav li {
     height: 40px;
 }
 
+nav li:hover {
+    text-decoration: underline;
+}
+
 nav a {
     height: 100%;
     padding: 0px 30px;
