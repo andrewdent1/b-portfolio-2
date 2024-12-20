@@ -47,10 +47,6 @@ nav li {
     height: 40px;
 }
 
-nav li:hover {
-    text-decoration: underline;
-}
-
 nav a {
     height: 100%;
     padding: 0px 30px;
@@ -62,6 +58,7 @@ nav a {
 
 nav a:hover {
     color: #f0f0f0;
+    text-decoration: underline;
 }
 
 .sidebar {
