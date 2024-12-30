@@ -63,3 +63,37 @@ window.addEventListener('resize', () => {
     const slideWidth = getSlideWidth();
     container.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 });
+
+// Open the modal and populate it with content
+function openModal(info) {
+    const modal = document.getElementById('modal');
+    const modalInfo = document.getElementById('modal-info');
+
+    modalInfo.textContent = info; // Set the modal content
+    modal.style.display = 'flex'; // Show the modal
+}
+
+// Close the modal
+function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none'; // Hide the modal
+}
+
+// Attach event listeners to all .btn-modal buttons
+document.querySelectorAll('.btn-modal').forEach(button => {
+    button.addEventListener('click', function () {
+        const info = this.getAttribute('data-info'); // Get the data-info attribute
+        openModal(info); // Open the modal with the info
+    });
+});
+
+// Close modal when clicking the close button
+document.getElementById('close-modal').addEventListener('click', closeModal);
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', function (event) {
+    const modal = document.getElementById('modal');
+    if (event.target === modal) {
+        closeModal();
+    }
+});
